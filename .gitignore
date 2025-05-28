@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 bin
 obj
 *.sln.DotSettings.user
@@ -9,3 +10,16 @@ vendor
 venv
 **/DS_Store/*
 **/.DS_Store/*
+=======
+bin
+obj
+*.sln.DotSettings.user
+.vs
+vendor
+.idea
+*.iml
+**/*.received.*
+venv
+**/DS_Store/*
+**/.DS_Store/*
+>>>>>>> 6a4b9ba17e222d481b4320690b2cc76948ef446c
