@@ -1,24 +1,13 @@
-# Gilded Rose starting position in C# NUnit
+ Cambios 
 
-## Build the project
+ 1-Sobre los items.sc 
+    Se creo un contructor simple para limpiar sectores de memoria.
+    Se creo un contructor sobre cargado con los parametros que son necesarios para su funcionamiento. 
+    Se usaron en ambos contructores la etiqueta this, esta etiquitas evita la creacion de copias de variables ya que es un puntero de variable, evitando la duplicacion de espacio en la memoria ram y su vez garantizando la buenas practicas.
 
-Use your normal build tools to build the projects in Debug mode.
-For example, you can use the `dotnet` command line tool:
+2- Se modifico el codigo eliminando el ciclo anterior donde habian mas de 100 lineas codigo.
+    Se agrego la biblioteca System.Linq;
+    La biblioteca enteriormente agregada, permite hacer consultas muchas mas precisas y mas compactas, por lo cual se eliminar el ciclo for, y se pasa a utilizar la consulta where, list y se modifica las opciones necesarias para cada caso especifico. 
 
-``` cmd
-dotnet build GildedRose.sln -c Debug
-```
-
-## Run the Gilded Rose Command-Line program
-
-For e.g. 10 days:
-
-``` cmd
-GildedRose/bin/Debug/net8.0/GildedRose 10
-```
-
-## Run all the unit tests
-
-``` cmd
-dotnet test
-```
+3- Se modifico el Program.sc 
+    Se cambio la asignacion de las variables a la hora de crear cada item ahora se hacer por contructos sobre cargados.
