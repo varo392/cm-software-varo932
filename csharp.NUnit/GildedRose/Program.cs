@@ -7,13 +7,13 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("OMGHAI!");
+        ImprimirTexto("OMGHAI!");
 
         IList<Item> items = new List<Item>
         {
             // se cambio para que el constructor sobre cargado sea el que se use
             new Item ("+5 Dexterity Vest", 10,20),
-            new Item ( "Aged Brie", 2, 0),
+            new Item ("Aged Brie", 2, 0),
             new Item ("Elixir of the Mongoose",5,7),
             new Item ("Sulfuras, Hand of Ragnaros",0,80),
             new Item ("Sulfuras, Hand of Ragnaros",-1, 80),
@@ -24,7 +24,7 @@ public class Program
             new Item ("Conjured Mana Cake",3, 6)
         };
 
-        var app = new GildedRose(items);
+        GildedRose Gr = new GildedRose(items);
 
         int days = 2;
         if (args.Length > 0)
@@ -34,14 +34,32 @@ public class Program
 
         for (var i = 0; i < days; i++)
         {
-            Console.WriteLine("-------- day " + i + " --------");
-            Console.WriteLine("name, sellIn, quality");
+            ImprimirInicio(i);
             for (var j = 0; j < items.Count; j++)
             {
-                Console.WriteLine(items[j].Name + ", " + items[j].SellIn + ", " + items[j].Quality);
+                ImprimirLinea(Gr,items[j]);
             }
-            Console.WriteLine("");
-            app.UpdateQuality();
+
+            ImprimirTexto("");
+            Gr.UpdateQuality();
         }
     }
+
+    private static void ImprimirLinea(GildedRose Gr, Item It)
+    {
+        ImprimirTexto(Gr.ImprimirItem(It));
+
+    }
+
+    private static void ImprimirInicio(int i)
+    {
+        ImprimirTexto("-------- day " + i + " --------");
+        ImprimirTexto("name, sellIn, quality");
+    }
+
+    private static void ImprimirTexto(string texto)
+    {
+        Console.WriteLine(texto);
+    }
+
 }
